@@ -1,0 +1,35 @@
+ZONA360 V2 - FINAL RE-AUDIT / HARDENING
+Date: 2026-08-31
+Version: 2.0.6-final-audit-hardening (versionCode 2026083107)
+
+STATIC VALIDATION COMPLETED
+- JavaScript syntax: PASS (zona360-firebase.js + React bundle)
+- Android XML parse: PASS
+- google-services.json parse + package match: PASS
+- Firebase database.rules.json parse: PASS
+- Manifest package/component wiring: PASS by static inspection
+- Capacitor custom plugin names/wiring: PASS by static inspection
+- Direct Scan -> Firebase activities+visits atomic patch -> exact visit read-back: PRESENT
+- Admin visit watchdog: PRESENT (lastVisitId + fetch recent visits)
+- Direct Scan store catalog: now requires a fresh Firebase stores/barcodes read; stale local catalog is not accepted when refresh fails
+- Mobile bottom padding/table horizontal scroll/navigation cleanup: PRESENT
+- Area: stripped from active users/sales/stores model; UI hidden; new user writes no longer add area/areaSales
+- Barcode image: MediaStore Android 10+; FileProvider share; Android 8/9 runtime storage permission callback added
+- GPS live/background: Foreground Location Service present; gpsHistory route remains; GPS no longer creates an Activity record every ~10 seconds
+- GPS Admin status: AKTIF/NONAKTIF based on last position freshness
+- Build config: compileSdk 35, targetSdk 35, minSdk 26, Java 17, AGP 8.7.3, Gradle 8.9
+
+IMPORTANT LIMITATION
+A full Gradle assembleDebug could not be executed in the ChatGPT container because Gradle 8.9 is not cached and services.gradle.org cannot be resolved from this environment. Physical Android tests (camera, GPS, lock-screen/background behavior, Firebase production rules) also cannot be emulated here. Therefore this audit is a strong static/integration audit, not a truthful claim of 100% device-runtime certification.
+
+FINAL DEVICE TEST REQUIRED AFTER ANDROID STUDIO BUILD
+1. Admin login + Sales login
+2. Admin add store -> verify store/barcode in Firebase
+3. Sales bottom Scan Toko -> camera directly
+4. Scan real store QR -> GPS -> Firebase read-back -> SCAN BERHASIL
+5. Admin sees visit without relogin
+6. Layout/scroll all Admin & Sales pages on small phone
+7. Area absent from visible UI
+8. GPS AKTIF/NONAKTIF transition
+9. Lock screen/minimize background tracking
+10. Barcode Save + Share to WhatsApp

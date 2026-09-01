@@ -1,0 +1,17 @@
+.gradle/
+.gradle-dist/
+local.properties
+**/build/
+*.iml
+.idea/
+captures/
+*.jks
+*.keystore
+
+# Uploaded source archive (contents are tracked after extraction)
+Zona360_V2_FINAL_AUDITED_SOURCE.zip
+
+# Binary assets are kept locally but intentionally excluded from source-only changes
+app/src/main/assets/public/manus-storage/logo_bddc6c14.png
+app/src/main/res/drawable/zona360_logo.png
+gradle/wrapper/gradle-wrapper.jar

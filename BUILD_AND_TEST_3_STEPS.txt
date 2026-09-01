@@ -1,0 +1,12 @@
+ZONA360 V2 - 3 LANGKAH
+
+1. BUKA
+   Extract ZIP, lalu Open folder Zona360_V2_MASTER_FULL_SOURCE di Android Studio.
+   Tunggu Gradle Sync selesai.
+
+2. BUILD
+   Build > Generate App Bundles or APKs > Generate APKs.
+   Jika ada error merah, kirim screenshot ERROR PERTAMA ke ChatGPT.
+
+3. TEST HP
+   Install app-debug.apk. Test: Login Sales -> izin GPS -> lihat truck di Admin Monitoring -> kunci layar 2-5 menit -> cek truck berubah lokasi; lalu test Simpan/Share Barcode, Order, Masukan Toko, Tambah Toko, dan Login Admin.

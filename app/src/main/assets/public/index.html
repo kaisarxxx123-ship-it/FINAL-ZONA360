@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="theme-color" content="#172630" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Zona360 — Sales Tracker Username Realtime</title>
+  <link rel="stylesheet" href="/assets/index-ZW7aGsbd.css" />
+  <script>
+  (function(){
+    // RC15: never allow stale sessions from an older release to force the app
+    // directly into a broken dashboard on first launch after update.
+    try {
+      if (localStorage.getItem('zona360_boot_release') !== 'FINAL-1') {
+        localStorage.setItem('zona360_boot_release','FINAL-1');
+      }
+    } catch (_) {}
+
+    function esc(v){return String(v == null ? '' : v).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+    function showError(message){
+      var run=function(){
+        var root=document.getElementById('root')||document.body;
+        if(!root)return;
+        root.innerHTML='<div style="padding:28px 22px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172630;background:#f7f7f3;min-height:100vh">'+
+          '<div style="max-width:560px;margin:40px auto"><div style="font-size:12px;font-weight:800;color:#f66a3c;letter-spacing:.12em">ZONA360 STARTUP DIAGNOSTIC</div>'+
+          '<h2 style="margin:12px 0">Aplikasi gagal memuat tampilan</h2><pre style="white-space:pre-wrap;padding:14px;background:#fff;border:1px solid #ddd;border-radius:8px;font-size:11px">'+esc(message)+'</pre>'+
+          '<button onclick="localStorage.removeItem(\'zona360_session\');location.reload()" style="margin-top:16px;padding:11px 15px;background:#f66a3c;color:#fff;border:0;border-radius:8px;font-weight:700">Ulangi dari Login</button></div></div>';
+      };
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run,{once:true}); else run();
+    }
+    window.__z360StartupError=showError;
+    window.addEventListener('error',function(e){
+      var boot=document.getElementById('z360-boot');
+      if(boot) showError((e.error&&e.error.stack)||e.message||'JavaScript error');
+      else console.error('Zona360 runtime error',e.error||e.message);
+    });
+    window.addEventListener('unhandledrejection',function(e){
+      var boot=document.getElementById('z360-boot');
+      if(boot) showError((e.reason&&e.reason.stack)||e.reason||'Unhandled promise rejection');
+      else console.error('Zona360 promise rejection',e.reason);
+    });
+  })();
+  </script>
+  <!-- Firebase helper is bundled locally. No network dependency is allowed to block startup. -->
+  <script src="/zona360-firebase.js"></script>
+</head>
+<body>
+  <div id="root">
+    <div id="z360-boot" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f7f3;color:#172630;font:600 14px system-ui,-apple-system,Segoe UI,sans-serif">
+      Memuat Zona360…
+    </div>
+  </div>
+  <script type="module" src="/assets/index-B5r-4bie.js"></script>
+  <script>
+    // Non-blocking initialization. The login screen must render whether Firebase is online or not.
+    window.addEventListener('load', function(){
+      setTimeout(function(){
+        try {
+          var p=window.Zona360Firebase&&window.Zona360Firebase.bootstrap&&window.Zona360Firebase.bootstrap();
+          if(p&&typeof p.catch==='function')p.catch(function(e){console.warn('Firebase bootstrap',e)});
+        } catch(e){console.warn('Firebase bootstrap',e)}
+      },500);
+    });
+    setTimeout(function(){
+      var boot=document.getElementById('z360-boot');
+      if(boot&&window.__z360StartupError)window.__z360StartupError('UI module tidak merender dalam 8 detik.');
+    },8000);
+  </script>
+</body>
+</html>

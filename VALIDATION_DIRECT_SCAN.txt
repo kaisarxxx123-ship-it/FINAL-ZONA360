@@ -1,0 +1,22 @@
+PASS - Direct bottom menu scanner function
+PASS - Bottom Scan Toko interception
+PASS - Old scan hero hidden
+PASS - Toko tujuan hidden
+PASS - Remote store/barcode refresh
+PASS - Barcode automatic store lookup
+PASS - Automatic GPS
+PASS - Firebase atomic activities+visits
+PASS - Success after awaited Firebase save
+PASS - Rejected notice
+PASS - Confirmed local snapshot after Firebase
+PASS - Admin Sales filter
+PASS - Admin month filter
+PASS - 100 row report pagination
+PASS - GPS AKTIF/NONAKTIF
+PASS - GPS active threshold
+PASS - Custom plugins registered before super
+PASS - Camera plugin registered
+PASS - Background GPS plugin registered
+PASS - XML/JSON parsed
+
+Gradle build sandbox: BLOCKED - no local Gradle 8.9 and no internet DNS for services.gradle.org.

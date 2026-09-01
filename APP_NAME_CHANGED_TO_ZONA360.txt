@@ -1,0 +1,5 @@
+Nama aplikasi yang tampil di launcher/HP sudah diubah menjadi: Zona360
+Package/applicationId tetap: com.zona360.salestracker
+Firebase/database dan source fitur tidak diubah oleh perubahan nama ini.
+Gradle root project tetap Zona360V2 agar struktur build tidak terganggu.
+Setelah membuka source ini di Android Studio, Generate APKs kembali.

@@ -1,0 +1,24 @@
+{
+  "project_info": {
+    "project_number": "1028330928592",
+    "project_id": "zona360",
+    "firebase_url": "https://zona360-default-rtdb.asia-southeast1.firebasedatabase.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028330928592:android:93dd1337c67a486db1a1d5",
+        "android_client_info": {
+          "package_name": "com.zona360.salestracker"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbnPBXBhciKxVxTIGe5VAgXYfClRJQgL4"
+        }
+      ],
+      "services": {}
+    }
+  ],
+  "configuration_version": "1"
+}

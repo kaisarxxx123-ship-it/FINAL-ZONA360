@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zona360</string>
+    <string name="location_channel_name">Zona360 GPS Sales</string>
+    <string name="location_channel_description">Tracking lokasi Sales selama login Zona360 aktif</string>
+</resources>
