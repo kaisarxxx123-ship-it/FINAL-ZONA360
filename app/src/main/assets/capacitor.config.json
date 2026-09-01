@@ -1,0 +1,19 @@
+{
+  "appId": "com.zona360.salestracker",
+  "appName": "Zona360",
+  "webDir": "dist/public",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 250,
+      "backgroundColor": "#172630",
+      "showSpinner": false
+    },
+    "Geolocation": {
+      "enableHighAccuracy": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Zona360 Sales Tracker",
+  "short_name": "Zona360",
+  "description": "Sales tracker lapangan untuk Kota Palu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f3",
+  "theme_color": "#172630",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/manus-storage/logo_bddc6c14.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

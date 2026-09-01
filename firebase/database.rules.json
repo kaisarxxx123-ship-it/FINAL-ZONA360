@@ -1,0 +1,69 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('role').val() === 'admin')",
+        ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+      }
+    },
+    "zona360_v1": {
+      ".read": "auth != null",
+      "users": {
+        "$uid": {
+          ".write": "auth != null && (auth.uid === $uid || data.child('uid').val() === auth.uid || newData.child('uid').val() === auth.uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+        }
+      },
+      "sales": {
+        "$uid": {
+          ".write": "auth != null && (auth.uid === $uid || data.child('uid').val() === auth.uid || newData.child('uid').val() === auth.uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+        }
+      },
+      "activities": {
+        "$id": {
+          ".write": "auth != null && (newData.child('userId').val() === auth.uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+        }
+      },
+      "visits": {
+        "$id": {
+          ".write": "auth != null && ((newData.child('userId').val() === auth.uid || newData.child('salesId').val() === auth.uid) || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+        }
+      },
+      "gpsHistory": {
+        "$id": {
+          ".write": "auth != null && (newData.child('userId').val() === auth.uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+        }
+      },
+      "orders": {
+        "$id": {
+          ".write": "auth != null && (newData.child('salesId').val() === auth.uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+        }
+      },
+      "feedback": {
+        "$id": {
+          ".write": "auth != null && ((newData.child('userId').val() === auth.uid || newData.child('salesId').val() === auth.uid) || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+        }
+      },
+      "stores": {
+        ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+      },
+      "products": {
+        ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+      },
+      "barcodes": {
+        ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+      },
+      "roles": {
+        ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+      },
+      "barcodeSettings": {
+        ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+      },
+      "visitRadius": {
+        ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+      },
+      "_meta": {
+        ".write": "auth != null"
+      }
+    }
+  }
+}

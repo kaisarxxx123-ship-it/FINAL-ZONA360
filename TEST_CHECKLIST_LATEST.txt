@@ -1,0 +1,42 @@
+ZONA360 V2 TEST CHECKLIST - 2.0.5
+
+1. ADMIN > DATA TOKO
+   [ ] AREA column is not visible.
+   [ ] Add/Edit Store has no visible AREA field.
+   [ ] Search placeholder contains no AREA.
+   [ ] Add a new store and wait briefly; no Firebase sync error appears.
+
+2. SALES > DIRECT SCAN
+   [ ] Tap bottom Scan Toko -> camera opens directly.
+   [ ] No Toko Tujuan/manual selector appears.
+   [ ] Scan valid Admin barcode.
+   [ ] GPS is acquired.
+   [ ] SCAN BERHASIL only appears after Firebase confirmation.
+   [ ] Invalid barcode -> SCAN DITOLAK.
+
+3. ADMIN CROSS-DEVICE
+   [ ] Keep Admin logged in on another phone.
+   [ ] After Sales scan, visit appears without Admin logout/login (target within realtime / watchdog interval).
+   [ ] Sales name, store, barcode, time and GPS are correct.
+
+4. MOBILE LAYOUT
+   [ ] Riwayat can scroll below last card.
+   [ ] Admin tables can scroll horizontally when needed.
+   [ ] Bottom navigation does not cover the final content.
+   [ ] Header and Android status bar do not overlap.
+
+5. NAVIGATION
+   [ ] Open Semua menu.
+   [ ] Monitoring -> Laporan -> Order Sales -> Masukan Toko -> Data Toko.
+   [ ] Drawer closes after each selection.
+   [ ] Laporan panel does not remain on Order/Masukan pages.
+   [ ] No stacked page, blank screen or repeated tapping required.
+
+6. REGRESSION
+   [ ] Admin login
+   [ ] Sales login
+   [ ] Products
+   [ ] Orders
+   [ ] Barcode Admin save/share
+   [ ] GPS Monitoring truck
+   [ ] Background tracking

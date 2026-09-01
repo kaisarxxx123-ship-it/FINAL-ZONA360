@@ -1,0 +1,46 @@
+Zona360 V2 MASTER FULL SOURCE - STATIC VALIDATION
+Generated: 2026-08-31
+
+[PASS] JSON app/google-services.json
+[PASS] JSON app/src/main/assets/capacitor.config.json
+[PASS] JSON app/src/main/assets/capacitor.plugins.json
+[PASS] XML app/src/main/AndroidManifest.xml
+[PASS] XML app/src/main/res/values/styles.xml
+[PASS] XML app/src/main/res/values/strings.xml
+[PASS] XML app/src/main/res/xml/file_paths.xml
+[PASS] Required app/src/main/java/com/zona360/salestracker/MainActivity.java
+[PASS] Required app/src/main/java/com/zona360/salestracker/Zona360LocationService.java
+[PASS] Required app/src/main/java/com/zona360/salestracker/Zona360BackgroundGpsPlugin.java
+[PASS] Required app/src/main/java/com/zona360/salestracker/Zona360GeolocationPlugin.java
+[PASS] Required app/src/main/java/com/zona360/salestracker/BarcodeFilesPlugin.java
+[PASS] Required app/src/main/java/com/zona360/salestracker/Zona360BarcodeScannerPlugin.java
+[PASS] Required app/src/main/assets/public/assets/index-B5r-4bie.js
+[PASS] Required app/src/main/assets/public/assets/index-ZW7aGsbd.css
+[PASS] Required app/src/main/assets/public/zona360-firebase.js
+[PASS] MASTER design preserved: UI JS bundle
+[PASS] MASTER design preserved: Main CSS
+[PASS] MASTER design preserved: Web module 1
+[PASS] MASTER design preserved: Web module 2
+[PASS] MASTER design preserved: Zona360 logo
+[PASS] MASTER design preserved: index.html
+[PASS] MASTER design preserved: manifest.webmanifest
+[PASS] Firebase old project retained
+[PASS] Firebase old database retained
+[PASS] Firebase root zona360_v1 retained
+[PASS] Truck marker wired
+[PASS] Auto GPS wired
+[PASS] Old work buttons removed from helper
+[PASS] Area hide wired
+[PASS] Barcode native save wired
+[PASS] Barcode FileProvider content URI
+[PASS] Location FGS manifest
+[PASS] Location stopWithTask false
+[PASS] FGS location permission
+[PASS] Background location declared
+[PASS] Plugins registered
+[PASS] FGS START_STICKY
+[PASS] Live sales record fallback
+[PASS] Package com.zona360.salestracker
+[PASS] Target Android modern
+
+NOTE: Full Android Gradle compile was not run in this container because Android SDK/dependency network access is unavailable here. Static wiring, XML/JSON, JS syntax and MASTER design hashes were checked.
